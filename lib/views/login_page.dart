@@ -55,8 +55,7 @@ class LoginPageState extends State<LoginPage> {
               child: RaisedButton(
                 onPressed: () {
                   if (email == 'admin@gmail.com' && password == '123456') {
-                    Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => HomePage()));
+                    Navigator.of(context).pushReplacementNamed('/home');
                   } else
                     print('501- Error');
                 },

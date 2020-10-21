@@ -13,12 +13,14 @@ class AppWidget extends StatelessWidget {
   const AppWidget({Key key, this.title}) : super(key: key);
 
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text(
-          title,
-          textDirection: TextDirection.ltr,
-          style: TextStyle(color: Colors.white, fontSize: 75),
+    return MaterialApp(
+      theme: ThemeData.light(),
+      home: Container(
+        child: Center(
+          child: Text(
+            title,
+            style: TextStyle(color: Colors.white, fontSize: 45),
+          ),
         ),
       ),
     );

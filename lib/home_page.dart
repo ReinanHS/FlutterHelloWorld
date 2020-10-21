@@ -10,8 +10,22 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   int cont = 0;
+  final loremIpsum = <Widget>[];
+
   @override
   Widget build(BuildContext context) {
+    for (var i = 0; i < 10; i++) {
+      loremIpsum.add(Container(
+        width: double.infinity,
+        height: 80,
+        margin: EdgeInsets.only(top: 40),
+        child: Text(
+          "Lorem ipsum odor amet, consectetuer adipiscing elit. Integer dolor enim sem aenean vel. Massa leo aliquam finibus montes",
+          style: TextStyle(fontSize: 24),
+        ),
+      ));
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Hello"),
@@ -20,58 +34,61 @@ class HomePageState extends State<HomePage> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              "Contador: $cont",
-              style: TextStyle(
-                fontSize: 24,
+        child: ListView(scrollDirection: Axis.vertical, children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "Contador: $cont",
+                style: TextStyle(
+                  fontSize: 24,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
-            ),
-            FlatButton(
-                onPressed: () {
-                  setState(() {
-                    cont++;
-                  });
-                },
-                color: Colors.blueAccent,
-                textColor: Colors.white,
-                child: Text('Aumentar')),
-            CustomSwitch(),
-            Row(
-              children: [
-                Container(
-                  width: MediaQuery.of(context).size.width / 5,
-                  height: 50,
+              FlatButton(
+                  onPressed: () {
+                    setState(() {
+                      cont++;
+                    });
+                  },
                   color: Colors.blueAccent,
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width / 5,
-                  height: 50,
-                  color: Colors.yellowAccent,
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width / 5,
-                  height: 50,
-                  color: Colors.red,
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width / 5,
-                  height: 50,
-                  color: Colors.indigo,
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width / 5,
-                  height: 50,
-                  color: Colors.green,
-                ),
-              ],
-            )
-          ],
-        ),
+                  textColor: Colors.white,
+                  child: Text('Aumentar')),
+              CustomSwitch(),
+              Row(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width / 5,
+                    height: 50,
+                    color: Colors.blueAccent,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width / 5,
+                    height: 50,
+                    color: Colors.yellowAccent,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width / 5,
+                    height: 50,
+                    color: Colors.red,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width / 5,
+                    height: 50,
+                    color: Colors.indigo,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width / 5,
+                    height: 50,
+                    color: Colors.green,
+                  ),
+                ],
+              ),
+            ],
+          ),
+          ...loremIpsum,
+        ]),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

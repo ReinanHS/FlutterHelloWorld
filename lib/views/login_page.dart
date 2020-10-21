@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:helloWorld/views/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -54,7 +55,8 @@ class LoginPageState extends State<LoginPage> {
               child: RaisedButton(
                 onPressed: () {
                   if (email == 'admin@gmail.com' && password == '123456') {
-                    print('200 - Login');
+                    Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) => HomePage()));
                   } else
                     print('501- Error');
                 },

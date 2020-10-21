@@ -10,7 +10,6 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   int cont = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +41,35 @@ class HomePageState extends State<HomePage> {
                 textColor: Colors.white,
                 child: Text('Aumentar')),
             CustomSwitch(),
+            Row(
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width / 5,
+                  height: 50,
+                  color: Colors.blueAccent,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width / 5,
+                  height: 50,
+                  color: Colors.yellowAccent,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width / 5,
+                  height: 50,
+                  color: Colors.red,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width / 5,
+                  height: 50,
+                  color: Colors.indigo,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width / 5,
+                  height: 50,
+                  color: Colors.green,
+                ),
+              ],
+            )
           ],
         ),
       ),

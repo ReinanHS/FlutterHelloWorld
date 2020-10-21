@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:helloWorld/controllers/app_controller.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -22,10 +23,11 @@ class HomePageState extends State<HomePage> {
         color: Colors.amber,
         child: Align(
           alignment: AlignmentDirectional.center,
-          child: Container(
-            width: 100,
-            height: 100,
-            color: Colors.deepPurpleAccent,
+          child: Switch(
+            value: AppController.instance.isDarkTheme,
+            onChanged: (value) {
+              AppController.instance.changeTheme();
+            },
           ),
         ),
       ),

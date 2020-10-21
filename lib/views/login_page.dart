@@ -26,38 +26,50 @@ class LoginPageState extends State<LoginPage> {
                 fontSize: 34, fontWeight: FontWeight.w700, color: Colors.white),
           ),
         ),
-        Padding(
-          padding: EdgeInsets.all(10),
-          child: TextField(
-              keyboardType: TextInputType.emailAddress,
-              onChanged: (text) {
-                email = text;
-              },
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(), labelText: "Email")),
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(10),
+                  child: TextField(
+                      keyboardType: TextInputType.emailAddress,
+                      onChanged: (text) {
+                        email = text;
+                      },
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(), labelText: "Email")),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(10),
+                  child: TextField(
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: true,
+                      onChanged: (text) {
+                        password = text;
+                      },
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(), labelText: "Senha")),
+                ),
+                Padding(
+                    padding: EdgeInsets.all(10),
+                    child: RaisedButton(
+                      onPressed: () {
+                        if (email == 'admin@gmail.com' &&
+                            password == '123456') {
+                          Navigator.of(context).pushReplacementNamed('/home');
+                        } else
+                          print('501- Error');
+                      },
+                      child: Text('Fazer Login'),
+                      color: Colors.red,
+                      textColor: Colors.white,
+                    ))
+              ],
+            ),
+          ),
         ),
-        Padding(
-          padding: EdgeInsets.all(10),
-          child: TextField(
-              keyboardType: TextInputType.visiblePassword,
-              obscureText: true,
-              onChanged: (text) {
-                password = text;
-              },
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(), labelText: "Senha")),
-        ),
-        Padding(
-            padding: EdgeInsets.all(10),
-            child: RaisedButton(
-              onPressed: () {
-                if (email == 'admin@gmail.com' && password == '123456') {
-                  Navigator.of(context).pushReplacementNamed('/home');
-                } else
-                  print('501- Error');
-              },
-              child: Text('Fazer Login'),
-            ))
       ]),
     );
   }

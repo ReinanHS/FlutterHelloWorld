@@ -19,12 +19,30 @@ class HomePageState extends State<HomePage> {
         actions: [CustomSwitch()],
       ),
       body: Container(
-        width: 200,
-        height: 200,
-        color: Colors.amber,
-        child: Align(
-          alignment: AlignmentDirectional.center,
-          child: CustomSwitch(),
+        width: double.infinity,
+        height: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              "Contador: $cont",
+              style: TextStyle(
+                fontSize: 24,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            FlatButton(
+                onPressed: () {
+                  setState(() {
+                    cont++;
+                  });
+                },
+                color: Colors.blueAccent,
+                textColor: Colors.white,
+                child: Text('Aumentar')),
+            CustomSwitch(),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(

@@ -27,6 +27,41 @@ class HomePageState extends State<HomePage> {
     }
 
     return Scaffold(
+      drawer: Drawer(
+          child: Column(children: [
+        UserAccountsDrawerHeader(
+          currentAccountPicture: CircleAvatar(
+            radius: 20,
+            backgroundImage: NetworkImage(
+                'https://avatars1.githubusercontent.com/u/28494067?s=460&u=25aa03949bbf77de836775bda8436c1136943c71&v=4'),
+          ),
+          accountName: Text('Reinan Gabriel'),
+          accountEmail: Text('reinangabriel@gmail.com'),
+        ),
+        ListTile(
+          title: Text('Home'),
+          leading: Icon(Icons.home),
+        ),
+        ListTile(
+          title: Text('Loja'),
+          leading: Icon(Icons.store),
+        ),
+        ListTile(
+          title: Text('Perfil'),
+          leading: Icon(Icons.verified_user),
+        ),
+        ListTile(
+          title: Text('Amigos'),
+          leading: Icon(Icons.supervised_user_circle),
+        ),
+        ListTile(
+          title: Text('Sair'),
+          leading: Icon(Icons.exit_to_app),
+          onTap: () {
+            Navigator.of(context).pushReplacementNamed('/');
+          },
+        ),
+      ])),
       appBar: AppBar(
         title: Text("Hello"),
         actions: [CustomSwitch()],

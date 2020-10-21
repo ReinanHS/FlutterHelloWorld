@@ -16,12 +16,18 @@ class LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Login'),
         leading: Icon(Icons.login),
       ),
       body: SingleChildScrollView(
         child: Column(children: [
+          SizedBox(
+            width: 150,
+            child: Image.network(
+                'https://www.proyektia.com/wp-content/uploads/2016/05/example-logo.png'),
+          ),
           Container(
             padding: EdgeInsets.all(40),
             child: Text(

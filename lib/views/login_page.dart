@@ -24,10 +24,7 @@ class LoginPageState extends State<LoginPage> {
       body: SingleChildScrollView(
         child: Column(children: [
           SizedBox(
-            width: 150,
-            child: Image.network(
-                'https://www.proyektia.com/wp-content/uploads/2016/05/example-logo.png'),
-          ),
+              width: 150, child: Image.asset('assets/images/example-logo.png')),
           Container(
             padding: EdgeInsets.all(40),
             child: Text(

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:helloWorld/controllers/app_controller.dart';
-import 'package:helloWorld/views/home_page.dart';
-import 'package:helloWorld/views/login_page.dart';
+import 'package:helloWorld/views/pages/home_page.dart';
+import 'package:helloWorld/views/pages/login_page.dart';
+import 'package:helloWorld/views/pages/dashboard_page.dart';
 
 class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -10,13 +11,15 @@ class AppWidget extends StatelessWidget {
         builder: (BuildContext context, Widget child) {
           return MaterialApp(
               theme: ThemeData(
+                  primaryColor: Color(0xff7ec556),
                   brightness: AppController.instance.isDarkTheme
                       ? Brightness.dark
                       : Brightness.light),
-              initialRoute: '/',
+              initialRoute: '/dashboard',
               routes: {
                 '/': (context) => LoginPage(),
                 '/home': (context) => HomePage(),
+                '/dashboard': (context) => DashboardPage(),
               });
         });
   }
